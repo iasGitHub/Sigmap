@@ -1,4 +1,4 @@
-<pre width="100">
+<pre width="50">
   SSSSSSSSSSSSSSS IIIIIIIIII      GGGGGGGGGGGGGMMMMMMMM               MMMMMMMM               AAA               PPPPPPPPPPPPPPPPP   
  SS:::::::::::::::SI::::::::I   GGG::::::::::::GM:::::::M             M:::::::M              A:::A              P::::::::::::::::P  
 S:::::SSSSSS::::::SI::::::::I GG:::::::::::::::GM::::::::M           M::::::::M             A:::::A             P::::::PPPPPP:::::P 
@@ -16,4 +16,4 @@ S::::::SSSSSS:::::SI::::::::I GG:::::::::::::::GM::::::M               M::::::M 
 S:::::::::::::::SS I::::::::I   GGG::::::GGG:::GM::::::M               M::::::M A:::::A                 A:::::A P::::::::P          
  SSSSSSSSSSSSSSS   IIIIIIIIII      GGGGGG   GGGGMMMMMMMM               MMMMMMMMAAAAAAA                   AAAAAAAPPPPPPPPPP   
 </pre>
-<img src="http://www.marchespublics.sn/templates/mp_public/images/header_short.jpg"/>
+
