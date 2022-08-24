@@ -1,0 +1,117 @@
+{
+  "name": "PlanPassation",
+  "fields": [
+    {
+      "fieldName": "dateDebut",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateFin",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "commentaire",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "annee",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateCreation",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateMiseValidation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateValidation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commentaireMiseEnValidationAC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referenceMiseValidationAC",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fichierMiseValidationAC",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "dateMiseEnValidationCcmp",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "fichierMiseValidationCcmp",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "referenceMiseValidationCcmp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateValidation1",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "commentaireValidation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referenceValidation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fichierValidation",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "dateValidation2",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRejet",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datePublication",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "commentairePublication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numPlan",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210112112931",
+  "entityTableName": "plan_passation",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms",
+  "searchEngine": false,
+  "databaseType": "sql"
+}

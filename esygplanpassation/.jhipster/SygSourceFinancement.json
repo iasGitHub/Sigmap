@@ -1,0 +1,32 @@
+{
+  "name": "SygSourceFinancement",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sygTypeSourceFinancement",
+      "otherEntityRelationshipName": "sygSourceFinancement",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sygTypeSourceFinancement",
+      "otherEntityField": "libelle"
+    }
+  ],
+  "changelogDate": "20210112113231",
+  "entityTableName": "syg_source_financement",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}

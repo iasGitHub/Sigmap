@@ -1,0 +1,104 @@
+entity Historique {
+  dateRejet LocalDate,
+  dateRjet2 LocalDate,
+  dateMiseValidation LocalDate,
+  commentaireRejet String,
+  commentaireMiseValidation String,
+  fichierMiseValidation AnyBlob,
+  fichierRejet AnyBlob,
+  etat String,
+  etat2 String,
+  commentaireRejet2 String,
+  fichierRejet2 AnyBlob
+}
+entity ModePassation {
+  /**
+   * The firstname attribute.
+   */
+  libelle String required,
+  code String required,
+  description String required
+}
+entity ParamDate {
+  dateCreat LocalDate
+}
+entity PlanPassation {
+  dateDebut LocalDate,
+  dateFin LocalDate,
+  commentaire String,
+  annee Integer required,
+  dateCreation LocalDate required,
+  dateMiseValidation LocalDate,
+  dateValidation LocalDate,
+  statut String,
+  commentaireMiseEnValidationAC String,
+  referenceMiseValidationAC String,
+  fichierMiseValidationAC AnyBlob,
+  dateMiseEnValidationCcmp LocalDate,
+  fichierMiseValidationCcmp AnyBlob,
+  referenceMiseValidationCcmp String,
+  dateValidation1 LocalDate,
+  commentaireValidation String,
+  referenceValidation String,
+  fichierValidation AnyBlob,
+  dateValidation2 LocalDate,
+  dateRejet LocalDate,
+  datePublication LocalDate,
+  commentairePublication String
+}
+entity Realisation {
+  libelle String,
+  dateAttribution LocalDate required,
+  delaiexecution Integer required,
+  objet String,
+  montant BigDecimal,
+  examenDncmp Integer required,
+  examenPtf Integer required,
+  chapitreImputation String required,
+  autorisationEngagement String required,
+  dateReceptionDossier LocalDate required,
+  dateNonObjection LocalDate required,
+  dateAutorisation LocalDate required,
+  dateRecepNonObjection LocalDate required,
+  dateRecepDossCorrige LocalDate required,
+  datePubParPrmp LocalDate required,
+  dateOuverturePlis LocalDate required,
+  dateRecepNonObjectOcmp LocalDate required,
+  dateRecepRapportEva LocalDate required,
+  dateRecepNonObjectPtf LocalDate required,
+  dateExamenJuridique LocalDate required,
+  dateNotifContrat LocalDate required,
+  dateApprobationContrat LocalDate required
+}
+entity SygService {
+  code String required unique,
+  libelle String required,
+  description String
+}
+entity SygSourceFinancement {
+  libelle String required
+}
+entity SygTypeMarche {
+  code String required unique,
+  libelle String required,
+  description String
+}
+entity SygTypeService {
+  libelle String required
+}
+entity SygTypeSourceFinancement {
+  libelle String required
+}
+relationship ManyToOne {
+  Historique{planPassation required} to PlanPassation,
+  Realisation{planPassation required} to PlanPassation,
+  SygService{sygTypeService(libelle) required} to SygTypeService,
+  SygSourceFinancement{sygTypeSourceFinancement(libelle) required} to SygTypeSourceFinancement
+}
+
+dto Historique, ParamDate, PlanPassation, Realisation, SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement with mapstruct
+paginate Historique, ParamDate, PlanPassation, Realisation, SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement with pagination
+service Historique, ParamDate, PlanPassation, Realisation, SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement with serviceImpl
+microservice Historique, ModePassation, ParamDate, PlanPassation, Realisation, SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement with planpassationms
+clientRootFolder Historique, ModePassation, ParamDate, PlanPassation, Realisation, SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement with planpassationms
+filter SygService, SygSourceFinancement, SygTypeMarche, SygTypeService, SygTypeSourceFinancement

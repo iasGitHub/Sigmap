@@ -1,0 +1,28 @@
+{
+  "name": "ConfGenSequence",
+  "fields": [
+    {
+      "fieldName": "tableName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "currentValue",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210216091932",
+  "entityTableName": "conf_gen_sequence",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}

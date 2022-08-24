@@ -1,0 +1,28 @@
+{
+  "name": "ConfSequanceGenerator",
+  "fields": [
+    {
+      "fieldName": "nomTable",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "currentValue",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210216092132",
+  "entityTableName": "conf_sequance_generator",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}

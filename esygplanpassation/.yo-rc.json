@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "sn.ssi.sigmap",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "planpassationms",
+    "packageName": "sn.ssi.sigmap",
+    "packageFolder": "sn/ssi/sigmap",
+    "serverPort": "7072",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjgzMDdlNjQ0ODFjNjZmZmQyMDkxNDBkYWRlZDk0OGIxYTMwZDliYWIzZDNkNjI0MjU3NmU2Yzk5Yjc0MGNjYjAxODFkMjc4NzM5ZDhlNTgwNWUzMDdjYWZjZDRkZGY4NmVhZTdmODcwOTBmMjQzZjg5NzBmMGM1N2Q5NjFiNmU=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1610374930589,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "fr",
+    "languages": ["fr"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true,
+    "lastLiquibaseTimestamp": 1612785892000
+  }
+}

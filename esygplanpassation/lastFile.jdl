@@ -1,0 +1,90 @@
+entity ConfGenSequence {
+  tableName String maxlength(100),
+  currentValue Long
+}
+
+
+entity SygRealisation {
+  libelle String required,
+  dateAttribution LocalDate required,
+  delaiexecution Integer,
+  objet String,
+  montant BigDecimal,
+  examenDncmp Integer ,
+  examenPtf Integer ,
+  chapitreImputation String ,
+  autorisationEngagement String ,
+  dateReceptionDossier LocalDate ,
+  dateNonObjection LocalDate ,
+  dateAutorisation LocalDate ,
+  dateRecepNonObjection LocalDate ,
+  dateRecepDossCorrige LocalDate ,
+  datePubParPrmp LocalDate ,
+  dateOuverturePlis LocalDate ,
+  dateRecepNonObjectOcmp LocalDate ,
+  dateRecepRapportEva LocalDate ,
+  dateRecepNonObjectPtf LocalDate ,
+  dateExamenJuridique LocalDate ,
+  dateNotifContrat LocalDate ,
+  dateApprobationContrat LocalDate 
+}
+
+
+entity ConfSequanceGenerator {
+  nomTable String maxlength(100),
+  currentValue Long
+}
+
+
+entity ConfTableDeTransaction {
+  tableName String maxlength(100),
+  columnName String,
+  numeroLigne Long,
+  dataType DataType,
+  masterId Long,
+  intValue Integer,
+  booleanValue Boolean,
+  moneyValue BigDecimal,
+  stringValue String,
+  textValue TextBlob,
+  dateValue LocalDate,
+  instantValue Instant,
+  zonedDateTimeValue ZonedDateTime,
+  longValue Long,
+  floatValue Float,
+  doubleValue Double,
+  durationValue Duration,
+  uuidValue UUID
+}
+
+
+entity ConfTableRow {
+  tableName String maxlength(64),
+  labelName String maxlength(100),
+  columnName String maxlength(50),
+  dataType DataType
+}
+
+
+enum DataType {
+  INT,
+  MONEY,
+  BOOLEAN,
+  DATE,
+  DATE_TIME,
+  STRING,
+  TEXT,
+  IMAGE,
+  FILE,
+  LONG,
+  FLOAT,
+  DOUBLE,
+  DURATION,
+  UUID
+}
+
+
+
+paginate ConfGenSequence, SygRealisation, ConfSequanceGenerator, ConfTableDeTransaction,  ConfTableRow with pagination
+service ConfGenSequence, SygRealisation, ConfSequanceGenerator, ConfTableDeTransaction,  ConfTableRow  with serviceClass
+readOnly ConfTableDeTransaction

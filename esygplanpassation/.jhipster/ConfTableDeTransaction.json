@@ -1,0 +1,94 @@
+{
+  "name": "ConfTableDeTransaction",
+  "fields": [
+    {
+      "fieldName": "tableName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "columnName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroLigne",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dataType",
+      "fieldType": "DataType",
+      "fieldValues": "INT,MONEY,BOOLEAN,DATE,DATE_TIME,STRING,TEXT,IMAGE,FILE,LONG,FLOAT,DOUBLE,DURATION,UUID"
+    },
+    {
+      "fieldName": "masterId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "intValue",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "booleanValue",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "moneyValue",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "stringValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "textValue",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "dateValue",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "instantValue",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "zonedDateTimeValue",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "longValue",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "floatValue",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "doubleValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "durationValue",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "uuidValue",
+      "fieldType": "UUID"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210216092232",
+  "entityTableName": "conf_table_de_transaction",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": true,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}

@@ -1,0 +1,108 @@
+{
+  "name": "SygRealisation",
+  "fields": [
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dateAttribution",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "delaiexecution",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "objet",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "montant",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "examenDncmp",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "examenPtf",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "chapitreImputation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autorisationEngagement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateReceptionDossier",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateNonObjection",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateAutorisation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRecepNonObjection",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRecepDossCorrige",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "datePubParPrmp",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateOuverturePlis",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRecepNonObjectOcmp",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRecepRapportEva",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRecepNonObjectPtf",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateExamenJuridique",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateNotifContrat",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateApprobationContrat",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210216092618",
+  "entityTableName": "syg_realisation",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}

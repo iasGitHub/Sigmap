@@ -1,0 +1,74 @@
+{
+  "name": "Historique",
+  "fields": [
+    {
+      "fieldName": "dateRejet",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateRjet2",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "dateMiseValidation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "commentaireRejet",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commentaireMiseValidation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fichierMiseValidation",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "fichierRejet",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "etat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etat2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commentaireRejet2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fichierRejet2",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "planPassation",
+      "otherEntityRelationshipName": "historique",
+      "relationshipValidateRules": "required",
+      "relationshipName": "planPassation",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210112112631",
+  "entityTableName": "historique",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "planpassationms",
+  "applications": "*",
+  "microserviceName": "planpassationms"
+}
