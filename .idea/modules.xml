@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/esygpacerelle/gatewaysigmap.iml" filepath="$PROJECT_DIR$/esygpacerelle/gatewaysigmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/iSygmap.iml" filepath="$PROJECT_DIR$/.idea/iSygmap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esygplanpassation/planpassationms.iml" filepath="$PROJECT_DIR$/esygplanpassation/planpassationms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/esygreferentiel/referentielms.iml" filepath="$PROJECT_DIR$/esygreferentiel/referentielms.iml" />
     </modules>
   </component>
 </project>

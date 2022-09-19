@@ -2,6 +2,8 @@ package sn.ssi.sigmap.web.rest;
 
 import sn.ssi.sigmap.domain.SourcesFinancement;
 import sn.ssi.sigmap.repository.SourcesFinancementRepository;
+import sn.ssi.sigmap.service.SourcesFinancementService;
+import sn.ssi.sigmap.service.dto.SourcesFinancementDTO;
 import sn.ssi.sigmap.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
@@ -13,7 +15,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -30,7 +32,6 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api")
-@Transactional
 public class SourcesFinancementResource {
 
     private final Logger log = LoggerFactory.getLogger(SourcesFinancementResource.class);
@@ -40,9 +41,11 @@ public class SourcesFinancementResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
+    private final SourcesFinancementService sourcesFinancementService;
     private final SourcesFinancementRepository sourcesFinancementRepository;
 
-    public SourcesFinancementResource(SourcesFinancementRepository sourcesFinancementRepository) {
+    public SourcesFinancementResource(SourcesFinancementService sourcesFinancementService, SourcesFinancementRepository sourcesFinancementRepository) {
+        this.sourcesFinancementService = sourcesFinancementService;
         this.sourcesFinancementRepository = sourcesFinancementRepository;
     }
 
@@ -54,12 +57,12 @@ public class SourcesFinancementResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/sources-financements")
-    public ResponseEntity<SourcesFinancement> createSourcesFinancement(@Valid @RequestBody SourcesFinancement sourcesFinancement) throws URISyntaxException {
-        log.debug("REST request to save SourcesFinancement : {}", sourcesFinancement);
-        if (sourcesFinancement.getId() != null) {
+    public ResponseEntity<SourcesFinancementDTO> createSourcesFinancement(@Valid @RequestBody SourcesFinancementDTO sourcesFinancementDTO) throws URISyntaxException {
+        log.debug("REST request to save SourcesFinancement : {}", sourcesFinancementDTO);
+        if (sourcesFinancementDTO.getId() != null) {
             throw new BadRequestAlertException("A new sourcesFinancement cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        SourcesFinancement result = sourcesFinancementRepository.save(sourcesFinancement);
+        SourcesFinancementDTO result = sourcesFinancementService.save(sourcesFinancementDTO);
         return ResponseEntity.created(new URI("/api/sources-financements/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -74,15 +77,24 @@ public class SourcesFinancementResource {
      * or with status {@code 500 (Internal Server Error)} if the sourcesFinancement couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PutMapping("/sources-financements")
-    public ResponseEntity<SourcesFinancement> updateSourcesFinancement(@Valid @RequestBody SourcesFinancement sourcesFinancement) throws URISyntaxException {
-        log.debug("REST request to update SourcesFinancement : {}", sourcesFinancement);
-        if (sourcesFinancement.getId() == null) {
+    @PutMapping("/sources-financements/{id}")
+    public ResponseEntity<SourcesFinancementDTO> updateSourcesFinancement(
+        @PathVariable(value = "id", required = false) final Long id,
+        @Valid @RequestBody SourcesFinancementDTO sourcesFinancementDTO) throws URISyntaxException {
+        log.debug("REST request to update SourcesFinancement : {}, {}", id , sourcesFinancementDTO);
+        if (sourcesFinancementDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        SourcesFinancement result = sourcesFinancementRepository.save(sourcesFinancement);
+        if (!Objects.equals(id, sourcesFinancementDTO.getId())) {
+            throw new BadRequestAlertException("Invalid ID", ENTITY_NAME, "idinvalid");
+        }
+
+        if (!sourcesFinancementRepository.existsById(id)) {
+            throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
+        }
+        SourcesFinancementDTO result = sourcesFinancementService.update(sourcesFinancementDTO);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, sourcesFinancement.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, sourcesFinancementDTO.getId().toString()))
             .body(result);
     }
 

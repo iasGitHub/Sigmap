@@ -47,6 +47,9 @@ public class SourcesFinancement implements Serializable {
         return code;
     }
 
+    public SourcesFinancement() {
+    }
+
     public SourcesFinancement code(String code) {
         this.code = code;
         return this;

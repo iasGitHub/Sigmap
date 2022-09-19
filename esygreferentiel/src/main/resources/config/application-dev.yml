@@ -44,9 +44,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/referentielmsO2
-    username: postgres
-    password: passer123
+    url: jdbc:postgresql://localhost:5432/microreferentiel_bd
+    username: ias
+    password: myPsql@22
     hikari:
       poolName: Hikari
       auto-commit: false
